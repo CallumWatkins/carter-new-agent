@@ -54,8 +54,13 @@ const tags = computed(() => {
       </TransitionGroup>
     </div>
     <div class="field has-addons">
-      <div class="control">
-        <input class="input" type="text" v-model="addingNewValue" />
+      <div class="control new-tag">
+        <input
+          class="input"
+          type="text"
+          placeholder="Add your own"
+          v-model="addingNewValue"
+        />
       </div>
       <div class="control">
         <a class="button is-link" @click="addNewTag">Add</a>
@@ -84,6 +89,11 @@ const tags = computed(() => {
     box-shadow: 0px 0px 5px 3px hsl(225 97% 61% / 0.2),
       inset 0px 0px 5px 3px hsl(225 97% 61% / 0.2);
   }
+}
+
+.new-tag {
+  flex-grow: 1;
+  max-width: 400px;
 }
 
 .fade-enter-active,
