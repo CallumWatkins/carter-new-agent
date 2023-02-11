@@ -40,7 +40,7 @@ const navOpen = ref(false);
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-light">Log out</a>
+              <a class="button">Log out</a>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ const navOpen = ref(false);
   </RouterView>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s ease;
