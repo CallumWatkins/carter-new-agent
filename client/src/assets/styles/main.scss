@@ -13,4 +13,8 @@ $text-strong: hsl(0, 0%, 79%);
 $shadow: 0 0.5em 1em -0.125em rgba(hsl(0, 0%, 10%), 0.1),
   0 0px 0 1px rgba(hsl(0, 0%, 10%), 0.02);
 
+$radius-small: 4px;
+$radius: 8px;
+$radius-large: 12px;
+
 @import "bulma/bulma.sass";
