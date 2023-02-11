@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import NewAgentIdentityView from "../views/new-agent/NewAgentIdentityView.vue";
+import NewAgentPersonalityView from "../views/new-agent/NewAgentPersonalityView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
           path: "identity",
           name: "new-agent-identity",
           component: NewAgentIdentityView,
+        },
+        {
+          path: "personality",
+          name: "new-agent-personality",
+          component: NewAgentPersonalityView,
         },
       ],
     },
