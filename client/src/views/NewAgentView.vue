@@ -35,6 +35,10 @@ const newAgentData: Ref<NewAgentData> = ref({
 
 const canProceed = ref(false);
 
+function cancel() {
+  router.push({ name: "home" });
+}
+
 function previousFlowView() {
   transitionName.value = "slide-fade-inline-previous";
   router.push({ name: flowRoutes[currentFlowViewIndex.value - 1].name });
@@ -65,7 +69,16 @@ function nextFlowView() {
         <div class="block spacer"></div>
         <div class="block flow-buttons field is-grouped">
           <p class="control">
-            <button class="button" @click="previousFlowView">Back</button>
+            <button
+              v-if="currentFlowViewIndex === 0"
+              class="button"
+              @click="cancel"
+            >
+              Cancel
+            </button>
+            <button v-else class="button" @click="previousFlowView">
+              Back
+            </button>
           </p>
           <p class="control">
             <button
