@@ -32,10 +32,9 @@ function removePersonalityTrait(index: number, _trait: string) {
 <template>
   <div class="block">
     <h2 class="title is-4">Personality</h2>
-    <h3 class="subtitle is-5">Customise your agent's personality traits</h3>
-    <p class="block">
+    <h3 class="subtitle is-6">
       This will determine how the agent behaves and how it responds to prompts.
-    </p>
+    </h3>
     <TagCollection
       label="Personality Traits"
       :tags="newAgentData.personality"

@@ -22,11 +22,10 @@ watch(
 <template>
   <div class="block">
     <h2 class="title is-4">Identity</h2>
-    <h3 class="subtitle is-5">Choose your agent's identity</h3>
-    <p class="block">
+    <h3 class="subtitle is-6">
       This will determine how the agent refers to itself, and may affect its
       response style.
-    </p>
+    </h3>
     <div class="field">
       <label class="label">Name</label>
       <div class="control">
