@@ -10,7 +10,7 @@ const navOpen = ref(false);
       <div class="navbar-brand">
         <RouterLink class="navbar-item" to="/">
           <img
-            src="./assets/images/carter-full-white-transparent-cropped.svg"
+            src="./assets/images/carter-full-grad-white-transparent-cropped.svg"
             width="112"
             height="28"
           />
