@@ -84,6 +84,11 @@ function nextFlowView() {
             </button>
           </p>
         </div>
+        <progress
+          class="progress"
+          :value="currentFlowViewIndex + 1"
+          :max="flowRoutes.length"
+        ></progress>
       </div>
     </div>
   </section>
@@ -141,6 +146,43 @@ function nextFlowView() {
   background-color: #303030;
   max-width: 700px;
   padding: 2rem;
+  position: relative;
+  overflow: clip;
+
+  progress {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 10px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #444;
+
+    &::-moz-progress-bar {
+      transition: width 0.4s ease-in-out;
+      background: linear-gradient(
+        to right,
+        hsl(282, 50%, 38%) 0%,
+        hsl(225, 97%, 61%) 100%
+      );
+    }
+
+    &::-webkit-progress-bar {
+      background: transparent;
+    }
+
+    &::-webkit-progress-value {
+      transition: width 0.4s ease-in-out;
+      background: linear-gradient(
+        to right,
+        hsl(282, 50%, 38%) 0%,
+        hsl(225, 97%, 61%) 100%
+      );
+    }
+  }
 }
 
 .flow-buttons {
