@@ -28,7 +28,7 @@ const newAgentData: Ref<NewAgentData> = ref({
   created: new Date(),
   name: "",
   gender: "",
-  personality: [],
+  personality: ["Friend"],
   useCase: [],
   backstory: [],
 });
