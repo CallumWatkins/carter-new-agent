@@ -19,13 +19,27 @@ watch(
   { immediate: true }
 );
 
+const defaultTraits = [
+  "Friend",
+  "Assistant",
+  "Mentor",
+  "Colleague",
+  "Young Child",
+  "Lover",
+  "Customer",
+  "Customer Service",
+];
+
 function addPersonalityTrait(trait: string) {
   if (props.newAgentData.personality.includes(trait)) return;
   props.newAgentData.personality.push(trait);
 }
 
-function removePersonalityTrait(index: number, _trait: string) {
-  props.newAgentData.personality.splice(index, 1);
+function removePersonalityTrait(trait: string) {
+  props.newAgentData.personality.splice(
+    props.newAgentData.personality.indexOf(trait),
+    1
+  );
 }
 </script>
 
@@ -37,7 +51,8 @@ function removePersonalityTrait(index: number, _trait: string) {
     </h3>
     <TagCollection
       label="Personality Traits"
-      :tags="newAgentData.personality"
+      :default-tags="defaultTraits"
+      :selected-tags="newAgentData.personality"
       @add="addPersonalityTrait"
       @remove="removePersonalityTrait"
     />
