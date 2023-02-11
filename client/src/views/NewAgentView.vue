@@ -55,7 +55,7 @@ function nextFlowView() {
     <div class="container">
       <div class="box">
         <div class="block">
-          <h1 class="title is-5">New Agent</h1>
+          <h1 class="title is-3 mb-6">New Agent</h1>
           <RouterView
             v-slot="{ Component }"
             :new-agent-data="newAgentData"
@@ -143,7 +143,8 @@ function nextFlowView() {
 }
 
 .title {
-  text-align: center;
+  font-variant: small-caps;
+  margin-top: var(--progress-bar-height);
 }
 
 .container {
@@ -152,6 +153,8 @@ function nextFlowView() {
 }
 
 .box {
+  --progress-bar-height: 10px;
+
   min-height: 600px;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -167,7 +170,7 @@ function nextFlowView() {
     top: 0;
     right: 0;
     left: 0;
-    height: 10px;
+    height: var(--progress-bar-height);
     border-radius: 0;
     -webkit-appearance: none;
     -moz-appearance: none;
