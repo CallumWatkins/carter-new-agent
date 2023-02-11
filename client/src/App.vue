@@ -5,6 +5,8 @@ const navOpen = ref(false);
 </script>
 
 <template>
+  <div class="radial-glow-1"></div>
+  <div class="radial-glow-2"></div>
   <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
@@ -56,6 +58,28 @@ const navOpen = ref(false);
 </template>
 
 <style scoped lang="scss">
+.radial-glow-1,
+.radial-glow-2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+}
+
+.radial-glow-1 {
+  top: 20%;
+  left: 20%;
+  box-shadow: 0px 0px 1000px 500px hsl(282 50% 38% / 0.25);
+  background-color: hsl(282 50% 38% / 0.25);
+}
+
+.radial-glow-2 {
+  bottom: 20%;
+  right: 20%;
+  box-shadow: 0px 0px 1000px 500px hsl(225 97% 61% / 0.25);
+  background-color: hsl(225 97% 61% / 0.25);
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s ease;
