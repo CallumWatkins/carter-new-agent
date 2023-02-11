@@ -18,3 +18,18 @@ $radius: 8px;
 $radius-large: 12px;
 
 @import "bulma/bulma.sass";
+
+.select select,
+.input {
+  border-color: hsl(0deg, 0%, 10%);
+}
+
+.select select:hover,
+.input:hover {
+  border-color: hsl(0, 0%, 33%);
+}
+
+.select select:focus,
+.input:focus {
+  border-color: hsl(225deg, 97%, 61%);
+}
