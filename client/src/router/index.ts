@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import AgentView from "../views/AgentView.vue";
 import NewAgentIdentityView from "../views/new-agent/NewAgentIdentityView.vue";
 import NewAgentPersonalityView from "../views/new-agent/NewAgentPersonalityView.vue";
 
@@ -10,6 +11,11 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+    },
+    {
+      path: "/agent/:id",
+      name: "agent",
+      component: AgentView,
     },
     {
       path: "/new-agent",

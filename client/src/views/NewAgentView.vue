@@ -3,6 +3,9 @@ import type AgentData from "@/models/AgentData";
 import { watch, type Ref } from "vue";
 import { ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
+import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+import { useAgentsStore } from "@/stores/agents";
 
 const router = useRouter();
 const route = useRoute();
@@ -25,6 +28,7 @@ watch(
 );
 
 const newAgentData: Ref<AgentData> = ref({
+  id: uuidv4(),
   created: new Date(),
   name: "",
   gender: "",
@@ -47,6 +51,20 @@ function previousFlowView() {
 function nextFlowView() {
   transitionName.value = "slide-fade-inline-next";
   router.push({ name: flowRoutes[currentFlowViewIndex.value + 1].name });
+}
+
+async function finish() {
+  try {
+    await axios.post("http://localhost:8000/new-agent", newAgentData.value);
+    const agentsStore = useAgentsStore();
+    agentsStore.agents.push(newAgentData.value);
+    router.push({
+      name: "agent",
+      params: { id: newAgentData.value.id },
+    });
+  } catch (e) {
+    console.error("Request failed", e);
+  }
 }
 </script>
 
@@ -88,6 +106,7 @@ function nextFlowView() {
             <button
               v-if="currentFlowViewIndex === flowRoutes.length - 1"
               class="button is-primary"
+              @click="finish"
             >
               Finish
             </button>
