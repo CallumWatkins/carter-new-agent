@@ -59,6 +59,7 @@ const tags = computed(() => {
           class="input"
           type="text"
           placeholder="Add your own"
+          @keypress.enter="addNewTag"
           v-model="addingNewValue"
         />
       </div>
