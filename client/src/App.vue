@@ -61,23 +61,25 @@ const navOpen = ref(false);
 .radial-glow-1,
 .radial-glow-2 {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  border-radius: 50%;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .radial-glow-1 {
-  top: 20%;
-  left: 20%;
-  box-shadow: 0px 0px 1000px 500px hsl(282 50% 38% / 0.25);
-  background-color: hsl(282 50% 38% / 0.25);
+  background: radial-gradient(
+    circle at 20% 20%,
+    hsl(282 50% 38% / 0.25) 0%,
+    hsl(282 50% 38% / 0) 60%
+  );
 }
 
 .radial-glow-2 {
-  bottom: 20%;
-  right: 20%;
-  box-shadow: 0px 0px 1000px 500px hsl(225 97% 61% / 0.25);
-  background-color: hsl(225 97% 61% / 0.25);
+  background: radial-gradient(
+    circle at 80% 80%,
+    hsl(225 97% 61% / 0.25) 0%,
+    hsl(225 97% 61% / 0) 60%
+  );
 }
 
 .fade-enter-active,
