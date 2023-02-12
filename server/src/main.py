@@ -1,5 +1,5 @@
-from fastapi import FastAPI
 import datetime
+from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -25,6 +25,7 @@ class Agent(BaseModel):
 def home():
     return "Server is running"
 
-@app.post("/new-agent")
-def newAgent():
-    return "New agent"
+@app.post("/new-agent", status_code=status.HTTP_201_CREATED)
+def newAgent(data: Agent):
+    print(data)
+    return "New agent created"
