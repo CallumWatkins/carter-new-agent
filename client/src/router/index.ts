@@ -5,6 +5,7 @@ import NewAgentIdentityView from "../views/new-agent/NewAgentIdentityView.vue";
 import NewAgentPersonalityView from "../views/new-agent/NewAgentPersonalityView.vue";
 import NewAgentUsageView from "@/views/new-agent/NewAgentUsageView.vue";
 import NewAgentBackstoryView from "@/views/new-agent/NewAgentBackstoryView.vue";
+import NewAgentSummaryView from "@/views/new-agent/NewAgentSummaryView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
           path: "backstory",
           name: "new-agent-backstory",
           component: NewAgentBackstoryView,
+        },
+        {
+          path: "summary",
+          name: "new-agent-summary",
+          component: NewAgentSummaryView,
         },
       ],
     },
