@@ -105,10 +105,24 @@ async function finish() {
           <p class="control">
             <button
               v-if="currentFlowViewIndex === flowRoutes.length - 1"
-              class="button is-primary"
+              class="button is-primary glow-effect"
               @click="finish"
             >
               Finish
+              <svg class="glow-container">
+                <rect
+                  pathLength="100"
+                  stroke-linecap="round"
+                  rx="8px"
+                  class="glow-blur"
+                ></rect>
+                <rect
+                  pathLength="100"
+                  stroke-linecap="round"
+                  rx="8px"
+                  class="glow-line"
+                ></rect>
+              </svg>
             </button>
             <button
               v-else

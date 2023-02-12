@@ -33,3 +33,68 @@ $radius-large: 12px;
 .input:focus {
   border-color: hsl(225deg, 97%, 61%);
 }
+
+.button.glow-effect {
+  --glow-line-color: hsl(282, 42%, 56%);
+  --glow-line-thickness: 2px;
+  --glow-line-length: 20px;
+  --glow-blur-color: hsl(282, 50%, 38%);
+  --glow-blur-size: 5px;
+  --glow-offset: 10px;
+  --animation-speed: 1000ms;
+  --container-offset: 100px;
+  position: relative;
+
+  .glow-container {
+    pointer-events: none;
+    position: absolute;
+    inset: calc(var(--container-offset) / -2);
+    width: calc(100% + var(--container-offset));
+    height: calc(100% + var(--container-offset));
+    opacity: 0;
+  }
+
+  .glow-blur,
+  .glow-line {
+    width: calc(100% - var(--container-offset) + var(--glow-offset));
+    height: calc(100% - var(--container-offset) + var(--glow-offset));
+    x: calc((var(--container-offset) / 2) + calc(var(--glow-offset) / -2));
+    y: calc((var(--container-offset) / 2) + calc(var(--glow-offset) / -2));
+    fill: transparent;
+    stroke: black;
+    stroke-width: 5px;
+    stroke-dasharray: var(--glow-line-length)
+      calc(50px - var(--glow-line-length));
+  }
+
+  &:is(:hover, :focus) :is(.glow-line, .glow-blur) {
+    stroke-dashoffset: -80px;
+    transition: stroke-dashoffset var(--animation-speed) ease-in-out;
+  }
+
+  .glow-line {
+    stroke: var(--glow-line-color);
+    stroke-width: var(--glow-line-thickness);
+  }
+
+  .glow-blur {
+    filter: blur(var(--glow-blur-size));
+    stroke: var(--glow-blur-color);
+    stroke-width: var(--glow-blur-size);
+  }
+
+  &:is(:hover, :focus) .glow-container {
+    animation: glow-visibility ease-out var(--animation-speed);
+  }
+
+  @keyframes glow-visibility {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    20%,
+    80% {
+      opacity: 1;
+    }
+  }
+}
