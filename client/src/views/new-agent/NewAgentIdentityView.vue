@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type NewAgentData from "@/models/NewAgentData";
+import type AgentData from "@/models/AgentData";
 import { watch } from "vue";
 
 const props = defineProps<{
-  newAgentData: NewAgentData;
+  newAgentData: AgentData;
 }>();
 
 const emit = defineEmits<{

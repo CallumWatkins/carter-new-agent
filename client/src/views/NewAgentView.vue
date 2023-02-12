@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type NewAgentData from "@/models/NewAgentData";
+import type AgentData from "@/models/AgentData";
 import { watch, type Ref } from "vue";
 import { ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
@@ -24,7 +24,7 @@ watch(
   { immediate: true }
 );
 
-const newAgentData: Ref<NewAgentData> = ref({
+const newAgentData: Ref<AgentData> = ref({
   created: new Date(),
   name: "",
   gender: "",

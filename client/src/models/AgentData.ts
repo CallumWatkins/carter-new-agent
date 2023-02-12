@@ -1,4 +1,5 @@
-export default interface NewAgentData {
+export default interface AgentData {
+  id: string;
   created: Date;
   name: string;
   gender: string;
