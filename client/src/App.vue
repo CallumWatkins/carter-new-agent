@@ -10,7 +10,7 @@ const navOpen = ref(false);
   <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <RouterLink class="navbar-item" to="/">
+        <RouterLink class="navbar-item" :to="{ name: 'home' }">
           <img
             src="./assets/images/carter-full-grad-white-transparent-cropped.svg"
             width="112"
@@ -37,7 +37,9 @@ const navOpen = ref(false);
         :class="{ 'is-active': navOpen }"
       >
         <div class="navbar-start">
-          <RouterLink class="navbar-item" to="/">Home</RouterLink>
+          <RouterLink class="navbar-item" :to="{ name: 'home' }"
+            >Home</RouterLink
+          >
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
