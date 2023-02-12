@@ -28,7 +28,7 @@ const newAgentData: Ref<AgentData> = ref({
   created: new Date(),
   name: "",
   gender: "",
-  personality: ["Friend"],
+  personality: [],
   useCase: [],
   backstory: [],
 });
@@ -71,12 +71,16 @@ function nextFlowView() {
           <p class="control">
             <button
               v-if="currentFlowViewIndex === 0"
-              class="button"
+              class="button is-outlined is-light"
               @click="cancel"
             >
               Cancel
             </button>
-            <button v-else class="button" @click="previousFlowView">
+            <button
+              v-else
+              class="button is-outlined is-light"
+              @click="previousFlowView"
+            >
               Back
             </button>
           </p>

@@ -50,7 +50,6 @@ function removePersonalityTrait(trait: string) {
       This will determine how the agent behaves and how it responds to prompts.
     </h3>
     <TagCollection
-      label="Personality Traits"
       :default-tags="defaultTraits"
       :selected-tags="newAgentData.personality"
       @add="addPersonalityTrait"

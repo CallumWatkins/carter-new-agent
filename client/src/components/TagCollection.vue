@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 
 const props = defineProps<{
-  label: string;
+  label?: string;
   defaultTags: string[];
   selectedTags: string[];
 }>();
@@ -38,9 +38,9 @@ const tags = computed(() => {
 
 <template>
   <div class="field">
-    <label class="label">{{ label }}</label>
+    <label v-if="label" class="label">{{ label }}</label>
 
-    <div class="tags are-medium label-collection">
+    <div class="tags are-medium">
       <TransitionGroup name="fade">
         <div
           v-for="(tag, i) in tags"
