@@ -62,7 +62,7 @@ const navOpen = ref(false);
 <style scoped lang="scss">
 .radial-glow-1,
 .radial-glow-2 {
-  position: absolute;
+  position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;

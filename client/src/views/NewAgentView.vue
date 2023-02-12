@@ -187,6 +187,7 @@ async function finish() {
   padding: 2rem;
   position: relative;
   overflow: clip;
+  box-shadow: 0px 0px 20px 0px hsla(0 0% 0% / 0.3);
 
   progress {
     position: absolute;
